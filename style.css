@@ -107,3 +107,50 @@ h1 {
     font-size: 24px;
     cursor: pointer;
 }
+
+/* ===== Mobile Scaling for Small Screens ===== */
+@media only screen and (max-width: 480px) {
+    body {
+        transform: scale(1.2); /* scale everything by 120% */
+        transform-origin: top left; /* keep top-left aligned */
+        width: 100%;
+        overflow-x: hidden; /* prevent horizontal scroll */
+    }
+
+    h1 {
+        font-size: 43px; /* scale font proportionally */
+    }
+
+    .multiplier-text {
+        font-size: 19px;
+    }
+
+    .rounded-button {
+        font-size: 22px;
+        padding: 18px 36px;
+        margin: 12px;
+    }
+
+    .shop-button {
+        font-size: 19px;
+        padding: 12px 24px;
+        margin: 6px;
+    }
+
+    .price-text {
+        font-size: 17px;
+    }
+
+    #footer {
+        font-size: 22px;
+    }
+
+    .modal-content {
+        width: 384px; /* scale modal width */
+        padding: 24px;
+    }
+
+    #closeShop {
+        font-size: 29px;
+    }
+}
