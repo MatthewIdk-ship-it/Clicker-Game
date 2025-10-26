@@ -1,1 +1,116 @@
-/* Body styling */ body { font-family: 'Segoe UI', sans-serif; background-color: #ffffff; text-align: center; margin: 0; } /* Container */ .container { padding: 20px; } /* Click counter */ h1 { font-size: 36px; } /* Multipliers text */ .multiplier-text { font-size: 16px; font-weight: bold; margin: 5px 0; color: black; } /* Rounded buttons like Tkinter */ .rounded-button { background-color: white; border: 2px solid black; border-radius: 20px; font-size: 18px; font-weight: bold; padding: 15px 30px; margin: 10px; cursor: pointer; transition: all 0.2s ease; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); } .rounded-button:hover { transform: scale(1.05); background-color: #e0e0e0; box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2); } /* Shop buttons */ .shop-button { background-color: white; border: 2px solid black; border-radius: 15px; font-size: 16px; font-weight: bold; padding: 10px 20px; margin: 5px; cursor: pointer; transition: all 0.2s ease; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); } .shop-button:hover { transform: scale(1.05); background-color: #e0e0e0; box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2); } /* Price text below buttons */ .price-text { font-size: 14px; color: gray; margin: 0 0 10px 0; font-weight: bold; } /* Footer */ #footer { margin-top: 40px; font-size: 18px; font-weight: bold; color: black; } /* Shop modal */ .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); } .modal-content { background-color: #f0f0f0; margin: 15% auto; padding: 20px; width: 320px; border-radius: 15px; border: 2px solid black; display: flex; flex-direction: column; align-items: center; } #closeShop { align-self: flex-end; font-size: 24px; cursor: pointer; }
+/* Body styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Click counter */
+h1 {
+    font-size: 36px;
+}
+
+/* Multipliers text */
+.multiplier-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: black;
+}
+
+/* Rounded buttons like Tkinter */
+.rounded-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.rounded-button:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Shop buttons */
+.shop-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.shop-button:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Price text below buttons */
+.price-text {
+    font-size: 14px;
+    color: gray;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+/* Footer */
+#footer {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Shop modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+
+    /* Flexbox to center modal content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 320px;
+    border-radius: 15px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Close button */
+#closeShop {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+}
