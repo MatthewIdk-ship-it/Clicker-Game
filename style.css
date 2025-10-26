@@ -34,7 +34,7 @@ button, .rounded-button, .shop-button {
     padding: 15px 30px;
     margin: 10px;
     cursor: pointer;
-    transition: all 0.1s ease; /* fast for click effect */
+    transition: all 0.1s ease;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
@@ -45,9 +45,9 @@ button:hover, .rounded-button:hover, .shop-button:hover {
 }
 
 button:active, .rounded-button:active, .shop-button:active {
-    transform: translateY(2px); /* press down effect */
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* shadow shrinks */
-    background-color: #dcdcdc; /* darker while pressed */
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    background-color: #dcdcdc;
 }
 
 /* ===== Price text below buttons ===== */
@@ -68,17 +68,17 @@ button:active, .rounded-button:active, .shop-button:active {
 
 /* ===== Shop modal ===== */
 .modal {
-    display: none;
+    display: none; /* modal hidden by default */
     position: fixed;
     z-index: 1;
     left: 0; top: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0,0,0,0.4);
 
-    /* Flexbox to center modal content */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
 }
 
 /* ===== Modal content ===== */
@@ -92,6 +92,7 @@ button:active, .rounded-button:active, .shop-button:active {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    margin: 0; /* remove old margin */
 }
 
 /* ===== Close button ===== */
