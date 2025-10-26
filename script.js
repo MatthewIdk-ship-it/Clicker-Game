@@ -7,6 +7,7 @@ let autoRunning = false;
 let upgradeCost = 10;
 let autoCost = 50;
 
+// Elements
 const clicksLabel = document.getElementById("clicks");
 const clickMultiplierText = document.getElementById("clickMultiplier");
 const autoMultiplierText = document.getElementById("autoMultiplier");
@@ -19,7 +20,7 @@ const autoButton = document.getElementById("autoButton");
 const upgradePrice = document.getElementById("upgradePrice");
 const autoPrice = document.getElementById("autoPrice");
 
-// Update the clicks and multipliers display
+// ===== Update display =====
 function updateClicks() {
     clicksLabel.textContent = `Clicks: ${clicks}`;
     upgradePrice.textContent = `Cost: ${upgradeCost} clicks`;
@@ -28,25 +29,40 @@ function updateClicks() {
     autoMultiplierText.textContent = `Auto Multiplier: ${autoClickValue}/sec`;
 }
 
-// Click Me! button
+// ===== Click Me! button =====
 clickButton.addEventListener("click", () => {
     clicks += clickValue;
     updateClicks();
 });
 
-// Shop modal open/close
-shopButton.addEventListener("click", () => shopModal.style.display = "block");
-closeShop.addEventListener("click", () => shopModal.style.display = "none");
-window.addEventListener("click", (event) => {
-    if (event.target == shopModal) shopModal.style.display = "none";
+// ===== Shop modal open/close =====
+
+// Hide modal at start
+shopModal.style.display = "none";
+
+// Open modal when shop button is clicked
+shopButton.addEventListener("click", () => {
+    shopModal.style.display = "block";
 });
 
-// Shop upgrades
+// Close modal when X is clicked
+closeShop.addEventListener("click", () => {
+    shopModal.style.display = "none";
+});
+
+// Close modal if clicking outside modal content
+window.addEventListener("click", (event) => {
+    if (event.target === shopModal) {
+        shopModal.style.display = "none";
+    }
+});
+
+// ===== Shop upgrades =====
 upgradeButton.addEventListener("click", () => {
     if (clicks >= upgradeCost) { 
         clicks -= upgradeCost;
         clickValue += 1;
-        upgradeCost = Math.floor(upgradeCost * 1.5); // increase cost for next upgrade
+        upgradeCost = Math.floor(upgradeCost * 1.5);
         updateClicks();
     }
 });
@@ -55,13 +71,13 @@ autoButton.addEventListener("click", () => {
     if (clicks >= autoCost) { 
         clicks -= autoCost;
         autoClickValue += 1;
-        autoCost = Math.floor(autoCost * 1.5); // increase cost for next auto-clicker
+        autoCost = Math.floor(autoCost * 1.5);
         if (!autoRunning) startAutoClick();
         updateClicks();
     }
 });
 
-// Auto-clicker function
+// ===== Auto-clicker =====
 function startAutoClick() {
     autoRunning = true;
     setInterval(() => {
@@ -70,5 +86,5 @@ function startAutoClick() {
     }, 1000);
 }
 
-// Initialize display
+// ===== Initialize display =====
 updateClicks();
