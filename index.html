@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker Game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="clicks">Clicks: 0</h1>
+        <button id="clickButton" class="rounded-button">Click Me!</button>
+        <button id="shopButton" class="rounded-button">Open Shop</button>
+
+        <!-- Shop modal -->
+        <div id="shopModal" class="modal">
+            <div class="modal-content">
+                <span id="closeShop">&times;</span>
+                <h2>Shop Upgrades</h2>
+                <button id="upgradeButton" class="shop-button">Upgrade (+1 per click)</button>
+                <button id="autoButton" class="shop-button">Auto Clicker (+1/sec)</button>
+            </div>
+        </div>
+
+        <p id="footer">The Best Button Clicker Game In The World!</p>
+        <p id="publisher">© 2025 Your Name</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
