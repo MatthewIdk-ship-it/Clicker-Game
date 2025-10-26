@@ -8,6 +8,8 @@ let upgradeCost = 10;
 let autoCost = 50;
 
 const clicksLabel = document.getElementById("clicks");
+const clickMultiplierText = document.getElementById("clickMultiplier");
+const autoMultiplierText = document.getElementById("autoMultiplier");
 const clickButton = document.getElementById("clickButton");
 const shopButton = document.getElementById("shopButton");
 const shopModal = document.getElementById("shopModal");
@@ -17,11 +19,13 @@ const autoButton = document.getElementById("autoButton");
 const upgradePrice = document.getElementById("upgradePrice");
 const autoPrice = document.getElementById("autoPrice");
 
-// Update the clicks display and prices
+// Update the clicks and multipliers display
 function updateClicks() {
     clicksLabel.textContent = `Clicks: ${clicks}`;
     upgradePrice.textContent = `Cost: ${upgradeCost} clicks`;
     autoPrice.textContent = `Cost: ${autoCost} clicks`;
+    clickMultiplierText.textContent = `Click Multiplier: ${clickValue}`;
+    autoMultiplierText.textContent = `Auto Multiplier: ${autoClickValue}/sec`;
 }
 
 // Click Me! button
@@ -68,5 +72,3 @@ function startAutoClick() {
 
 // Initialize display
 updateClicks();
-
-
