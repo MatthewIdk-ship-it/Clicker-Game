@@ -68,7 +68,7 @@ button:active, .rounded-button:active, .shop-button:active {
 
 /* ===== Shop modal ===== */
 .modal {
-    display: none; /* modal hidden by default */
+    display: none; /* hidden at start */
     position: fixed;
     z-index: 1;
     left: 0; top: 0;
@@ -100,4 +100,15 @@ button:active, .rounded-button:active, .shop-button:active {
     align-self: flex-end;
     font-size: 24px;
     cursor: pointer;
+    transition: all 0.1s ease; /* smooth hover/click */
+}
+
+#closeShop:hover {
+    transform: scale(1.1); /* slightly bigger on hover */
+    color: #333; /* optional: slightly darker */
+}
+
+#closeShop:active {
+    transform: translateY(2px); /* press down effect */
+    color: #555; /* slightly darker while pressed */
 }
