@@ -24,7 +24,7 @@ h1 {
     color: black;
 }
 
-/* ===== All buttons ===== */
+/* ===== All buttons (including rounded and shop buttons) ===== */
 button {
     background-color: white;
     border: 2px solid black;
