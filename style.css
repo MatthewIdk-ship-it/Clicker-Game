@@ -89,10 +89,10 @@ button:active, .rounded-button:active, .shop-button:active {
     border-radius: 15px;
     border: 2px solid black;
     box-sizing: border-box;
-    margin: 0; /* remove old margin */
+    margin: 0;
 }
 
-/* ===== Close button (X) ===== */
+/* ===== Close button (X) in red ===== */
 #closeShop {
     position: absolute;
     top: 10px;
@@ -101,22 +101,23 @@ button:active, .rounded-button:active, .shop-button:active {
     cursor: pointer;
     transition: all 0.1s ease;
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid red;       /* red border */
+    color: red;                   /* text red */
     border-radius: 8px;
-    padding: 2px 6px;   /* tight padding around X */
+    padding: 2px 6px;   
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 #closeShop:hover {
     transform: scale(1.1);
-    background-color: #e0e0e0;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
-    color: #333;
+    background-color: #ffe5e5;   /* light red background */
+    box-shadow: 0 0 15px rgba(255,0,0,0.5), 0 0 25px rgba(255,0,0,0.2);
+    color: darkred;
 }
 
 #closeShop:active {
     transform: translateY(2px);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    background-color: #dcdcdc;
-    color: #555;
+    background-color: #ffcccc;   /* slightly darker red on click */
+    color: darkred;
 }
