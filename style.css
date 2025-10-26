@@ -25,7 +25,7 @@ h1 {
 }
 
 /* ===== All buttons (including rounded and shop buttons) ===== */
-button {
+button, .rounded-button, .shop-button {
     background-color: white;
     border: 2px solid black;
     border-radius: 20px;
@@ -38,13 +38,13 @@ button {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-button:hover {
+button:hover, .rounded-button:hover, .shop-button:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
 }
 
-button:active {
+button:active, .rounded-button:active, .shop-button:active {
     transform: translateY(2px); /* press down effect */
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* shadow shrinks */
     background-color: #dcdcdc; /* darker while pressed */
