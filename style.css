@@ -101,14 +101,23 @@ button:active, .rounded-button:active, .shop-button:active {
     font-size: 24px;
     cursor: pointer;
     transition: all 0.1s ease; /* smooth hover/click */
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 4px 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 #closeShop:hover {
     transform: scale(1.1); /* slightly bigger on hover */
-    color: #333; /* optional: slightly darker */
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
+    color: #333;
 }
 
 #closeShop:active {
     transform: translateY(2px); /* press down effect */
-    color: #555; /* slightly darker while pressed */
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    background-color: #dcdcdc;
+    color: #555;
 }
