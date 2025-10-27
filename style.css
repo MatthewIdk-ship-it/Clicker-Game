@@ -96,12 +96,13 @@ button:active, .rounded-button:active, .shop-button:active {
     margin: 0;
 }
 
-/* ===== Close button (X) - consistently dark red ===== */
+/* ===== Close button (X) - consistently dark red and bold ===== */
 #closeShop {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
+    font-weight: bold;           /* make X bold */
     cursor: pointer;
     transition: all 0.15s ease;
     background-color: white;
