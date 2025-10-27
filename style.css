@@ -1,4 +1,4 @@
-/* Body styling */
+/* ===== Body styling ===== */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #ffffff;
@@ -6,17 +6,17 @@ body {
     margin: 0;
 }
 
-/* Container */
+/* ===== Container ===== */
 .container {
     padding: 20px;
 }
 
-/* Click counter */
+/* ===== Click counter ===== */
 h1 {
     font-size: 36px;
 }
 
-/* Multipliers text */
+/* ===== Multipliers text ===== */
 .multiplier-text {
     font-size: 16px;
     font-weight: bold;
@@ -24,8 +24,8 @@ h1 {
     color: black;
 }
 
-/* Rounded buttons like Tkinter */
-.rounded-button {
+/* ===== All buttons (rounded, shop, main click) ===== */
+button, .rounded-button, .shop-button {
     background-color: white;
     border: 2px solid black;
     border-radius: 20px;
@@ -34,37 +34,25 @@ h1 {
     padding: 15px 30px;
     margin: 10px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-.rounded-button:hover {
+/* Hover effect for all buttons */
+button:hover, .rounded-button:hover, .shop-button:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
 }
 
-/* Shop buttons */
-.shop-button {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+/* Pressed (click) effect for all buttons */
+button:active, .rounded-button:active, .shop-button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    background-color: #dcdcdc;
 }
 
-.shop-button:hover {
-    transform: scale(1.05);
-    background-color: #e0e0e0;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
-}
-
-/* Price text below buttons */
+/* ===== Price text below buttons ===== */
 .price-text {
     font-size: 14px;
     color: gray;
@@ -72,7 +60,7 @@ h1 {
     font-weight: bold;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 #footer {
     margin-top: 40px;
     font-size: 18px;
@@ -80,7 +68,7 @@ h1 {
     color: black;
 }
 
-/* Shop modal */
+/* ===== Shop modal ===== */
 .modal {
     display: none;
     position: fixed;
@@ -90,6 +78,7 @@ h1 {
     background-color: rgba(0,0,0,0.4);
 }
 
+/* ===== Modal content (original flexbox layout) ===== */
 .modal-content {
     background-color: #f0f0f0;
     margin: 15% auto;
@@ -102,8 +91,29 @@ h1 {
     align-items: center;
 }
 
+/* ===== Close button (X) ===== */
 #closeShop {
     align-self: flex-end;
     font-size: 24px;
     cursor: pointer;
+    transition: all 0.1s ease;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2px 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+#closeShop:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
+    color: #333;
+}
+
+#closeShop:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    background-color: #dcdcdc;
+    color: #555;
 }
