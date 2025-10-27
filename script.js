@@ -1,4 +1,4 @@
-// ===== Clicker Game Variables =====
+// ===== Game Variables =====
 let clicks = 0;
 let clickValue = 1;
 let autoClickValue = 1;
@@ -19,24 +19,12 @@ const autoButton = document.getElementById("autoButton");
 const upgradePrice = document.getElementById("upgradePrice");
 const autoPrice = document.getElementById("autoPrice");
 
-// ===== Main Menu =====
-const mainMenu = document.getElementById("mainMenu");
-const gameScreen = document.getElementById("gameScreen");
-const startButton = document.getElementById("startButton");
-
-// ===== Click Sound (instant for rapid clicks) =====
+// ===== Click Sound =====
 function playClickSound() {
-    const clickSound = new Audio("sounds/click.mp3"); // create new Audio each time
+    const clickSound = new Audio("sounds/click.mp3");
     clickSound.volume = 0.5;
     clickSound.play();
 }
-
-// ===== Main Menu Start Button =====
-startButton.addEventListener("click", () => {
-    mainMenu.style.display = "none";
-    gameScreen.style.display = "block";
-    playClickSound();
-});
 
 // ===== Update Display =====
 function updateClicks() {
@@ -47,7 +35,7 @@ function updateClicks() {
     autoMultiplierText.textContent = `Auto Multiplier: ${autoClickValue}/sec`;
 }
 
-// ===== Button Event Listeners =====
+// ===== Button Events =====
 clickButton.addEventListener("click", () => {
     clicks += clickValue;
     updateClicks();
@@ -65,9 +53,7 @@ closeShop.addEventListener("click", () => {
 });
 
 window.addEventListener("click", (event) => {
-    if (event.target === shopModal) {
-        shopModal.style.display = "none";
-    }
+    if (event.target === shopModal) shopModal.style.display = "none";
 });
 
 upgradeButton.addEventListener("click", () => {
@@ -91,14 +77,15 @@ autoButton.addEventListener("click", () => {
     }
 });
 
-// ===== Auto-clicker function =====
+// ===== Auto-clicker =====
 function startAutoClick() {
     autoRunning = true;
     setInterval(() => {
-        clicks += autoClickValue / 10; // smoother updates
+        clicks += autoClickValue / 10; // smooth updates
         updateClicks();
-    }, 100); // 10 updates per second
+    }, 100);
 }
 
 // ===== Initialize =====
 updateClicks();
+
