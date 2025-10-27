@@ -1,34 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Clicker Game!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1 id="clicks">Clicks: 0</h1>
-        <p id="clickMultiplier" class="multiplier-text">Click Multiplier: 1</p>
-        <p id="autoMultiplier" class="multiplier-text">Auto Multiplier: 1/sec</p>
-        
-        <button id="clickButton" class="rounded-button">Click Me!</button>
-        <button id="shopButton" class="rounded-button">Open Shop</button>
+/* ===== Body styling ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
 
-        <!-- Shop modal -->
-        <div id="shopModal" class="modal">
-            <div class="modal-content">
-                <span id="closeShop">X</span>
-                <h2>Shop Upgrades</h2>
-                <button id="upgradeButton" class="shop-button">Upgrade (+1 per click)</button>
-                <p id="upgradePrice" class="price-text">Cost: 10 clicks</p>
-                <button id="autoButton" class="shop-button">Auto Clicker (+1/sec)</button>
-                <p id="autoPrice" class="price-text">Cost: 50 clicks</p>
-            </div>
-        </div>
+/* ===== Container ===== */
+.container {
+    padding: 20px;
+}
 
-        <p id="footer">The Best Button Clicker Game In The World!</p>
-    </div>
+/* ===== Click counter ===== */
+h1 {
+    font-size: 36px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* ===== Multipliers text ===== */
+.multiplier-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: black;
+}
+
+/* ===== All buttons (including rounded and shop buttons) ===== */
+button, .rounded-button, .shop-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ===== Hover effect ===== */
+button:hover, .rounded-button:hover, .shop-button:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* ===== Realistic centered click effect ===== */
+button:active, .rounded-button:active, .shop-button:active {
+    transform: scale(0.97);
+    transform-origin: center;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    background-color: #dcdcdc;
+}
+
+/* ===== Price text below buttons ===== */
+.price-text {
+    font-size: 14px;
+    color: gray;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+/* ===== Footer ===== */
+#footer {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* ===== Shop modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* ===== Modal content (centered, no flexbox) ===== */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 320px;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* ===== Close button (X) - consistently dark red ===== */
+#closeShop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background-color: white;
+    border: 2px solid #660000;   /* dark red outline */
+    color: #660000;              /* dark red X */
+    border-radius: 8px;
+    padding: 2px 6px;
+    box-shadow: 0 0 6px #660000; /* subtle dark red glow */
+}
+
+/* Hover effect — keep hover background same, but outline/X stay dark */
+#closeShop:hover {
+    transform: scale(1.1);
+    background-color: #ffe5e5;   /* light red background */
+    border-color: #660000;       /* stays dark red */
+    color: #660000;              /* stays dark red */
+    box-shadow: 0 0 12px #660000, 0 0 20px rgba(255,0,0,0.3);
+}
+
+/* Realistic click effect for close button */
+#closeShop:active {
+    transform: scale(0.95);
+    transform-origin: center;
+    background-color: #ffcccc;
+    border-color: #660000;
+    color: #660000;
+    box-shadow: inset 0 0 6px #660000, 0 0 10px rgba(255,0,0,0.2);
+}
+
