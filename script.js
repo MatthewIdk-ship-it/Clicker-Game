@@ -1,15 +1,10 @@
+// ===== Clicker Game Variables =====
 let clicks = 0;
 let clickValue = 1;
 let autoClickValue = 1;
 let autoRunning = false;
-
-// Upgrade costs
 let upgradeCost = 10;
 let autoCost = 50;
-
-// Load click sound
-const clickSound = new Audio("sounds/click.mp3");
-clickSound.volume = 0.5;
 
 // ===== DOM Elements =====
 const clicksLabel = document.getElementById("clicks");
@@ -29,19 +24,22 @@ const mainMenu = document.getElementById("mainMenu");
 const gameScreen = document.getElementById("gameScreen");
 const startButton = document.getElementById("startButton");
 
+// ===== Click Sound =====
+const clickSound = new Audio("sounds/click.mp3"); // path to your click sound
+clickSound.volume = 0.5;
+function playClickSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+// ===== Main Menu Start Button =====
 startButton.addEventListener("click", () => {
     mainMenu.style.display = "none";
     gameScreen.style.display = "block";
     playClickSound();
 });
 
-// ===== Utility: play sound function =====
-function playClickSound() {
-    clickSound.currentTime = 0; // reset to start
-    clickSound.play();
-}
-
-// ===== Update display =====
+// ===== Update Display =====
 function updateClicks() {
     clicksLabel.textContent = `Clicks: ${clicks}`;
     upgradePrice.textContent = `Cost: ${upgradeCost} clicks`;
@@ -50,14 +48,13 @@ function updateClicks() {
     autoMultiplierText.textContent = `Auto Multiplier: ${autoClickValue}/sec`;
 }
 
-// ===== Click Me! button =====
+// ===== Button Event Listeners =====
 clickButton.addEventListener("click", () => {
     clicks += clickValue;
     updateClicks();
     playClickSound();
 });
 
-// ===== Shop modal open/close =====
 shopButton.addEventListener("click", () => {
     shopModal.style.display = "block";
     playClickSound();
@@ -74,7 +71,6 @@ window.addEventListener("click", (event) => {
     }
 });
 
-// ===== Shop upgrades =====
 upgradeButton.addEventListener("click", () => {
     if (clicks >= upgradeCost) {
         clicks -= upgradeCost;
@@ -96,7 +92,7 @@ autoButton.addEventListener("click", () => {
     }
 });
 
-// ===== Auto-clicker =====
+// ===== Auto Clicker =====
 function startAutoClick() {
     autoRunning = true;
     setInterval(() => {
