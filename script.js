@@ -24,11 +24,10 @@ const mainMenu = document.getElementById("mainMenu");
 const gameScreen = document.getElementById("gameScreen");
 const startButton = document.getElementById("startButton");
 
-// ===== Click Sound =====
-const clickSound = new Audio("sounds/click.mp3"); // path to your click sound
-clickSound.volume = 0.5;
+// ===== Click Sound (instant for rapid clicks) =====
 function playClickSound() {
-    clickSound.currentTime = 0;
+    const clickSound = new Audio("sounds/click.mp3"); // create new Audio each time
+    clickSound.volume = 0.5;
     clickSound.play();
 }
 
@@ -41,7 +40,7 @@ startButton.addEventListener("click", () => {
 
 // ===== Update Display =====
 function updateClicks() {
-    clicksLabel.textContent = `Clicks: ${clicks}`;
+    clicksLabel.textContent = `Clicks: ${Math.floor(clicks)}`;
     upgradePrice.textContent = `Cost: ${upgradeCost} clicks`;
     autoPrice.textContent = `Cost: ${autoCost} clicks`;
     clickMultiplierText.textContent = `Click Multiplier: ${clickValue}`;
@@ -92,13 +91,13 @@ autoButton.addEventListener("click", () => {
     }
 });
 
-// ===== Auto Clicker =====
+// ===== Auto-clicker function =====
 function startAutoClick() {
     autoRunning = true;
     setInterval(() => {
-        clicks += autoClickValue;
+        clicks += autoClickValue / 10; // smoother updates
         updateClicks();
-    }, 1000);
+    }, 100); // 10 updates per second
 }
 
 // ===== Initialize =====
