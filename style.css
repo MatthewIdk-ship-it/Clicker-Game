@@ -1,122 +1,32 @@
-/* ===== Body styling ===== */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
-    text-align: center;
-    margin: 0;
-}
-
-/* ===== Container ===== */
-.container {
-    padding: 20px;
-}
-
-/* ===== Click counter ===== */
-h1 {
-    font-size: 36px;
-}
-
-/* ===== Multipliers text ===== */
-.multiplier-text {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 5px 0;
-    color: black;
-}
-
-/* ===== All buttons ===== */
-button, .rounded-button, .shop-button {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 30px;
-    margin: 10px;
-    cursor: pointer;
-    transition: all 0.1s ease;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-
-button:hover, .rounded-button:hover, .shop-button:hover {
-    transform: scale(1.05);
-    background-color: #e0e0e0;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
-}
-
-button:active, .rounded-button:active, .shop-button:active {
-    transform: translateY(2px);
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    background-color: #dcdcdc;
-}
-
-/* ===== Price text ===== */
-.price-text {
-    font-size: 14px;
-    color: gray;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-}
-
-/* ===== Footer ===== */
-#footer {
-    margin-top: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-}
-
-/* ===== Shop modal ===== */
-.modal {
-    display: none; /* hidden at start */
-    position: fixed;
-    z-index: 1;
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-/* ===== Modal content (centered, no flexbox) ===== */
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f0f0f0;
-    padding: 20px;
-    width: 320px;
-    border-radius: 15px;
-    border: 2px solid black;
-    box-sizing: border-box;
-    margin: 0;
-}
-
 /* ===== Close button (X) ===== */
 #closeShop {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+    font-size: 32px;          /* bigger X */
+    font-weight: bold;         /* bold X */
     cursor: pointer;
     transition: all 0.1s ease;
-    background-color: white;
-    border: 2px solid black;
+    background-color: white;   /* normal background */
+    border: 2px solid darkred; /* dark red outline */
     border-radius: 8px;
-    padding: 2px 6px;
+    padding: 4px 8px;          /* a bit more padding for bigger X */
+    color: darkred;            /* X color */
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
+/* Hover effect remains the same */
 #closeShop:hover {
     transform: scale(1.1);
     background-color: #e0e0e0;
     box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
-    color: #333;
+    color: darkred;             /* keep the X color dark red */
 }
 
+/* Active (pressed) effect */
 #closeShop:active {
     transform: translateY(2px);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     background-color: #dcdcdc;
-    color: #555;
+    color: darkred;
 }
