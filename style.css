@@ -24,7 +24,7 @@ h1 {
     color: black;
 }
 
-/* ===== All buttons (Click Me!, Shop, Upgrade, Auto) ===== */
+/* ===== All buttons ===== */
 button, .rounded-button, .shop-button {
     background-color: white;
     border: 2px solid black;
@@ -38,21 +38,19 @@ button, .rounded-button, .shop-button {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Hover effect */
 button:hover, .rounded-button:hover, .shop-button:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
 }
 
-/* Click effect */
 button:active, .rounded-button:active, .shop-button:active {
     transform: translateY(2px);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     background-color: #dcdcdc;
 }
 
-/* ===== Price text below buttons ===== */
+/* ===== Price text ===== */
 .price-text {
     font-size: 14px;
     color: gray;
@@ -94,7 +92,7 @@ button:active, .rounded-button:active, .shop-button:active {
     margin: 0;
 }
 
-/* ===== Close button (dark red X) ===== */
+/* ===== Close button (X) ===== */
 #closeShop {
     position: absolute;
     top: 10px;
@@ -102,27 +100,23 @@ button:active, .rounded-button:active, .shop-button:active {
     font-size: 24px;
     cursor: pointer;
     transition: all 0.1s ease;
-    background-color: #8B0000; /* dark red */
-    border: 2px solid #8B0000; /* dark red outline */
+    background-color: white;
+    border: 2px solid black;
     border-radius: 8px;
     padding: 2px 6px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    color: white;
 }
 
-/* Hover effect for X button (keeps hover same as before) */
 #closeShop:hover {
     transform: scale(1.1);
     background-color: #e0e0e0;
-    border-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 25px rgba(255,255,255,0.2);
     color: #333;
 }
 
-/* Click effect for X button */
 #closeShop:active {
     transform: translateY(2px);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     background-color: #dcdcdc;
-    border-color: #dcdcdc;
     color: #555;
 }
